@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xiao5.mannager.mapper.UsersMapper">
+
+    <sql id="Base_Column_List" >
+        ID,NAME,PASSWORD,AGE,REMARK,STATUS
+    </sql>
+
+    <select id="qryUsersById"  resultType="com.xiao5.mannager.entity.Users">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM USERS
+        <where>
+            <if test="id != null">
+                AND   id = #{id}
+            </if>
+        </where>
+    </select>
+
+</mapper>

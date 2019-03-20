@@ -1,5 +1,7 @@
 package com.xiao5.mannager.entity;
 
+import com.xiao5.mannager.core.utils.ApplicationContextUtil;
+import com.xiao5.mannager.entity.repository.IUsersRepository;
 import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -42,4 +44,8 @@ public class Users implements Serializable{
 
     @Column(name = "status")
     private String status;
+
+    public static IUsersRepository repository() {
+        return (IUsersRepository) ApplicationContextUtil.getBean("userRepositoryImpl");
+    }
 }
