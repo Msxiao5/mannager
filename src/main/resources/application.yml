@@ -1,0 +1,7 @@
+spring:
+  profiles: dev
+  datasource:
+      url: jdbc:mysql://39.96.9.168:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convert_to_null&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+      username: root
+      password: Abc123!_
+      driver-class-name: com.mysql.cj.jdbc.Driver
